@@ -77,3 +77,15 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+#login-form{
+	width: 300px;
+	height: 200px;
+	padding: 20px 20px 20px 20px;
+}
+#login-username{
+	width: 50px;
+}
+#register-div{
+	margin: auto;
+	width: 500px;
+}
