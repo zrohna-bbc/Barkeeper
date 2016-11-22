@@ -1,0 +1,24 @@
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<h:body>
+	<ui:include src="header.xhtml"></ui:include>
+	<div id="register-div">
+		<h:form>
+			<b:inputText placeholder="Username" binding="#{username}"></b:inputText>
+			<b:inputText placeholder="Email"  binding="#{email}"></b:inputText>
+			<b:inputText placeholder="Phone"  binding="#{phone}"></b:inputText>
+			<b:inputText placeholder="tt.mm.jjjj" type="date"  binding="#{date}"></b:inputText>
+			<b:inputSecret placeholder="Password"  binding="#{password}"></b:inputSecret>
+			<b:inputSecret placeholder="Confirm Password"></b:inputSecret>
+			<h:commandButton value="Register" action="#{registerController.register(username.value, email.value, phone.value, date.value, password.value)}"></h:commandButton>
+		</h:form>
+	</div>
+	<ui:include src="footer.xhtml"></ui:include>
+</h:body>
+</h:html>
