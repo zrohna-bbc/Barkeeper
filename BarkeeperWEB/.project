@@ -3,6 +3,7 @@
 	<name>BarkeeperWEB</name>
 	<comment></comment>
 	<projects>
+		<project>BarkeeperEJB</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -3,6 +3,7 @@
 	<name>BarkeeperEJB</name>
 	<comment></comment>
 	<projects>
+		<project>BarkeeperJPA</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

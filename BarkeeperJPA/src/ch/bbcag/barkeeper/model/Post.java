@@ -1,19 +1,35 @@
 package ch.bbcag.barkeeper.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
-public class Post {
+import javax.persistence.*;
 
+/**
+ * Entity implementation class for Entity: Post
+ *
+ */
+@Entity
+
+public class Post implements Serializable {
+
+	
+	private static final long serialVersionUID = 1L;
+	@Id
 	private int id;
 	private String title;
 	private String description;
 	private int idAuthor;
 	private Date creationDate;
+	@ElementCollection
 	private List<String> ingredients;
 	private String preperation;
+	@ElementCollection
 	private List<Integer> upvoterIDs;
+	@ElementCollection
 	private List<Integer> downvoterIDs;
+	@ElementCollection
 	private List<Integer> commentIDs;
 	private int difficulty;
 	private int timeInMinutes;
@@ -124,4 +140,8 @@ public class Post {
 	public void setTimeInMinutes(int timeInMinutes) {
 		this.timeInMinutes = timeInMinutes;
 	}
+	public Post() {
+		super();
+	}
+   
 }
