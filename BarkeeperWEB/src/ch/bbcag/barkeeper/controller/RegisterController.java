@@ -35,6 +35,7 @@ public class RegisterController implements Serializable {
 			System.out.println("Customer has been registered c:");
 		} catch (Exception e) {
 			System.out.println("Customer could not be registered :c");
+			e.printStackTrace();
 		}
 		return "/home";
 

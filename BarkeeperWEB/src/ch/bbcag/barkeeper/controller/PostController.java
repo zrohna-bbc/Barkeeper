@@ -30,22 +30,24 @@ public class PostController implements Serializable{
 	public List<UserSpecificPostData> getPosts(String sort){
 		List<UserSpecificPostData> result = new ArrayList<UserSpecificPostData>();
 		String s = "apioafaöwsepfjawhug0pasngdböanjrgipaefra dvgkjbhaoeuifgbawegknaspigpvas vökadjbrfpainv puhr";
+		UserSpecificPostData post1 = new UserSpecificPostData(new Post(1, "Post 1", s+s+s+s+s+s+s+s+s+s, 1, new Date(System.currentTimeMillis()), upvoters, downvoters));
+		UserSpecificPostData post2 = new UserSpecificPostData(new Post(2, "Post 2", s+s+s+s+s+s+s+s+s+s+s+s+s+s, 2, new Date(System.currentTimeMillis()), upvoters, downvoters));
+		UserSpecificPostData post3 = new UserSpecificPostData(new Post(3, "Post 3", s+s+s+s+s, 3, new Date(System.currentTimeMillis()), upvoters, downvoters));
+		UserSpecificPostData post4 = new UserSpecificPostData(new Post(4, "Post 4", "ag9rhaegrj", 4, new Date(System.currentTimeMillis()), upvoters, downvoters));
 		switch (sort) {
-		case "top":
-			UserSpecificPostData post1 = new UserSpecificPostData(new Post(1, "Post 1", s+s+s+s+s+s+s+s+s+s, 1, new Date(System.currentTimeMillis()), upvoters, downvoters));
-			result.add(post1);
-//			UserSpecificPostData post2 = new UserSpecificPostData(new Post(2, "Post 2", s+s+s+s+s+s+s+s+s+s+s+s+s+s, 2, new Date(System.currentTimeMillis()), upvoters, downvoters));
-//			result.add(post2);
-//			UserSpecificPostData post3 = new UserSpecificPostData(new Post(3, "Post 3", s+s+s+s+s, 3, new Date(System.currentTimeMillis()), upvoters, downvoters));
-//			result.add(post3);
-//			UserSpecificPostData post4 = new UserSpecificPostData(new Post(4, "Post 4", "ag9rhaegrj", 4, new Date(System.currentTimeMillis()), upvoters, downvoters));
-//			result.add(post4);
-			break;
-
 		case "new":
+			result.add(post2);
 			break;
 			
-		case "duscussed":
+		case "discussed":
+			result.add(post3);
+			break;
+		default:
+		case "top":
+			result.add(post1);
+			result.add(post2);
+			result.add(post3);
+			result.add(post4);
 			break;
 		}
 		return result;

@@ -11,7 +11,7 @@
 <h:body>
 	<ui:include src="header.xhtml"></ui:include>
 	<div class="post-list" id="post-list">
-		<ui:repeat var="post" value="#{postController.getPosts('top')}">
+		<ui:repeat var="post" value="#{postController.getPosts(param['sort'])}">
 		<div class="post-container">
 			<div class="post-votes">
 			<h:form>
