@@ -20,6 +20,16 @@ public class RegisterController implements Serializable {
 	
 	@Inject
 	private User user;
+	
+	private boolean isUserLoggedIn;
+	
+	public boolean isUserLoggedIn() {
+		return isUserLoggedIn;
+	}
+
+	public void setUserLoggedIn(boolean isUserLoggedIn) {
+		this.isUserLoggedIn = isUserLoggedIn;
+	}
 
 	public User getUser() {
 		return user;
@@ -45,6 +55,7 @@ public class RegisterController implements Serializable {
 		try {
 			if (registerBean.login(getUser().getEmail(), getUser().getPassword())) {
 				System.out.println("Customer " + getUser().getEmail() + " has been logged in");
+				setUserLoggedIn(true);;
 			} else {
 				System.out.println("Customer could not be logged in");
 			}

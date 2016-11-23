@@ -1,5 +1,3 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html>
 <h:html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:b="http://bootsfaces.net/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -9,8 +7,8 @@
 	<h:outputStylesheet library="css" name="style.css" />
 </h:head>
 <h:body>
-	<b:navBar style="border-radius: 0;" brand="Barkeeper"
-		brandHref="home.xhtml" inverse="true">
+	<b:navBar style="border-radius: 0;" brand="Barkeeper" position="top"
+		sticky="true" brandHref="home.xhtml" inverse="true">
 		<b:navbarLinks pull="left">
 			<b:navLink value="New" href="#" />
 			<b:navLink value="Top" href="#" />
@@ -18,14 +16,20 @@
 		</b:navbarLinks>
 		<b:navbarLinks pull="right">
 			<b:navLink value="New Post" icon="pencil" href="#" />
-			<b:dropMenu value="Username" href="#">
+			<b:dropMenu
+				value="#{registerController.userLoggedIn eq true ? '' : 'Register/Login'}"
+				href="#">
 				<h:form id="login-form">
-					<b:icon name="user"></b:icon>
-					<b:inputText id="login-username" value="#{registerController.user.email}"></b:inputText>
-					<b:icon name="lock"></b:icon>
-					<b:inputSecret id="login-password" value="#{registerController.user.password}"></b:inputSecret>
-					<b:commandButton value="Login" action="#{registerController.login()}"></b:commandButton>
-					<b:button onclick="window.location.href='register.xhtml'" value="Register"></b:button>
+					<b:icon name="user" />
+					<b:inputText id="login-username"
+						value="#{registerController.user.email}" />
+					<b:icon name="lock" />
+					<b:inputSecret id="login-password"
+						value="#{registerController.user.password}" />
+					<b:commandButton value="Login"
+						action="#{registerController.login()}" />
+					<b:button onclick="window.location.href='register.xhtml'"
+						value="Register" />
 				</h:form>
 			</b:dropMenu>
 		</b:navbarLinks>

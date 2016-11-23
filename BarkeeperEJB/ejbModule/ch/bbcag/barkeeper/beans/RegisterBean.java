@@ -18,20 +18,13 @@ public class RegisterBean implements RegisterBeanLocal {
 
 	@Override
 	public boolean login(String email, String password) {
-		return em.createNamedQuery(
-				"User.findByEmailAndPassword")
-		        .setParameter("email", email)
-		        .setParameter("password", password)
-		        .getResultList().size() > 0;
+		return em.createNamedQuery("User.findByEmailAndPassword").setParameter("email", email)
+				.setParameter("password", password).getResultList().size() > 0;
 	}
 
 	@Override
 	public void register(User user) {
-		try {
-			em.persist(user);
-		} catch (Exception e) {
-			//handle the exception :D
-		}
+		em.persist(user);
 	}
 
 }
