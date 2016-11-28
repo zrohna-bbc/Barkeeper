@@ -5,7 +5,6 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import javax.persistence.Entity;
 import javax.persistence.Id;
